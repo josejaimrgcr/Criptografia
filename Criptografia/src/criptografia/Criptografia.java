@@ -6,7 +6,7 @@ import java.util.*;
 Algortimos implementados por:
 Castañeda Ruiz José Jaime Gpe.
 Hernandez Ortega Erick Ramon
-Castañeda Alan
+Castañeda Llamas Alan Jesús 
 */
 
 public class Criptografia {
