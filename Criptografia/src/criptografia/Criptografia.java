@@ -2,9 +2,17 @@ package criptografia;
 
 import java.util.*;
 
+/*
+Algortimos implementados por:
+Castañeda Ruiz José Jaime Gpe.
+Hernandez Ortega Erick Ramon
+Alan
+*/
+
 public class Criptografia {
 
     Scanner sc = new Scanner(System.in);
+    Scanner scc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Criptografia c1 = new Criptografia();
@@ -32,7 +40,7 @@ public class Criptografia {
                 System.out.print("""
                                                  Ingrese el texto a cifrar
                                                  -> """);
-                texto = sc.next();
+                texto = scc.next();
                 keyword = crearLlave(texto);
                 palabraChida = encriptarOtp(texto.toUpperCase(), keyword.toUpperCase());
                 System.out.println("Mensaje Encriptado: " + palabraChida);
