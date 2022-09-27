@@ -37,15 +37,45 @@ public class Criptografia {
         System.out.println("---------------");
         switch (menu) {
             case 1 -> {
+               System.out.println("\nCifrado OTP\n");
+                
+                int decision;
                 System.out.print("""
-                                                 Ingrese el texto a cifrar
-                                                 -> """);
-                texto = scc.next();
-                keyword = crearLlave(texto);
-                palabraChida = encriptarOtp(texto.toUpperCase(), keyword.toUpperCase());
-                System.out.println("Mensaje Encriptado: " + palabraChida);
-                palabraChida = decriptarOtp(palabraChida.toUpperCase(), keyword.toUpperCase()).toUpperCase();
-                System.out.println("Mensaje Decriptado: " + palabraChida);
+                         ---------------
+                         1. Encriptar
+                         2. Desencriptar
+                         ->  """);
+                decision = sc.nextInt();
+                 switch(decision) {
+
+                    case 1 -> {
+
+                        System.out.print("Ingrese texto a encriptar: ");
+                        texto = scc.nextLine();
+                        scc.close();
+                        
+                        keyword = crearLlave(texto);
+                        palabraChida = encriptarOtp(texto.toUpperCase(), keyword.toUpperCase());
+                        System.out.println("Mensaje Encriptado: " + palabraChida);
+                        System.out.println("Keyword utilizada: " + keyword.toUpperCase());
+                    }
+
+                    case 2 -> {
+                        System.out.print("Ingrese texto a desencriptar: ");
+                        texto = scc.nextLine();
+                
+                        System.out.print("Ingrese keyword: ");
+                        keyword = scc.nextLine();
+                        sc.close();
+                
+                        palabraChida = decriptarOtp(texto.toUpperCase(), keyword.toUpperCase());
+                        System.out.println("Mensaje Decriptado: " + palabraChida.replaceAll(":", " "));
+                    }
+
+                    default -> {
+                        System.out.println("Opción Incorrecta.");
+                    }
+                }
             }
             case 2 -> {
                 System.out.println("\nCifrado Playfair\n");
